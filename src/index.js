@@ -50,14 +50,14 @@ function onError() {
     Notiflix.Notify.failure("Oops, there is no country with that name");
 };
 
+
 function onCountryInfo(data) {
     clearMarkup();
-    const markup = data.map(createCountryInfoMarkup).join("");
+    const markup = createCountryListMarkup(data);
     refs.countryInfo.innerHTML = markup;
 };
-
 function onCountryList(data) {
     clearMarkup();
-    const markup = data.map(createCountryListMarkup).join("");
+    const markup = data.map(createCountryInfoMarkup).join("");
     refs.countryList.innerHTML = markup;
 };
